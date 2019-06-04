@@ -1,26 +1,24 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService implements CanActivate{
+export class UserService{
 
-  private currentUser = null;
+  private currentUser: User = null;
 
   constructor(
   ) { }
 
-  login(){
-
+  get user(): User{
+    return this.currentUser;
   }
 
-  logout(){
-
+  set user(user:User){
+    this.currentUser = user;
   }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    return this.currentUser != null;
-  }
 }
