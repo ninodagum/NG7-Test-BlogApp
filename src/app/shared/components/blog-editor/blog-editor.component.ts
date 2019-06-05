@@ -6,18 +6,20 @@ import { Window } from 'selenium-webdriver';
   templateUrl: './blog-editor.component.html',
   styleUrls: ['./blog-editor.component.scss']
 })
-export class BlogEditorComponent implements OnInit, AfterViewInit {
+export class BlogEditorComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
-    if(window.tinymce){
-      window.tinymce.init({selector: 'textarea#blogEditor', menubar: false});
-    }
+
   }
 
-  ngAfterViewInit(){
-    // (Window as any).tinymce.init({selector: 'textarea#blogEditor'});
+  save(){
+
+  }
+
+  close(){
+
   }
 
 

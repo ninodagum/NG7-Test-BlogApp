@@ -1,0 +1,17 @@
+:host{
+
+  &:not(:first-child){
+      mat-card{
+        border: solid 1px lime;
+        margin-top: 15px;
+      }
+  }
+
+  mat-card {
+    border: solid 1px red;
+
+  }
+
+
+}
+

@@ -1,7 +1,15 @@
-
-<div>
-  <button mat-button (click)="openEditor()">+</button>
-</div>
-<p>
-    <app-blog></app-blog>
-</p>
+<form   #blogForm="ngForm" class="home main" (ngSubmit)="submit()">
+  <mat-card>
+    <mat-card-title></mat-card-title>
+    <mat-card-content>
+        <div class="app-blog-wrapper">
+          <app-blog *ngFor="blog in blogs" blog="blog"></app-blog>
+        </div>
+        <editor [init]="{menubar: false}" name="newBlogDescription" [(ngModel)]="newBlogDescription"></editor>
+    </mat-card-content>
+    <mat-card-actions fxLayout="row" fxLayoutAlign="end start">
+        <button mat-button>Clear</button>
+        <button type="submit" mat-button>Save</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
