@@ -11,7 +11,7 @@ const defaultRoute: Route = {
   pathMatch: 'full'
 }
 const secureRoutes: Routes = [defaultRoute, ...homeRoutes];
-secureRoutes.forEach(route => { route.canActivate = [AuthenticationService]; });
+// secureRoutes.forEach(route => { route.canActivate = [AuthenticationService]; });
 
 const routes = [...secureRoutes, ...loginRoutes];
 
