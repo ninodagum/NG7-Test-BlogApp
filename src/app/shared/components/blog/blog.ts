@@ -1,3 +1,5 @@
+import { User } from 'src/app/core/user/user';
+
 export interface Blog {
     id: number;
     userId: number;
@@ -7,6 +9,8 @@ export interface Blog {
     blogImage: string;
     tags: string;
     description: string;
+    likes?: number;
+    user?: User;
 
 }
 
